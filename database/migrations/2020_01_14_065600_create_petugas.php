@@ -17,7 +17,7 @@ class CreatePetugas extends Migration
             $table->bigIncrements('id');
             $table->string('nama_petugas',100);
             $table->string('alamat',100);
-            $table->integer('telp');
+            $table->string('telp');
             $table->string('username',100);
             $table->string('password',100);
             $table->timestamps();
