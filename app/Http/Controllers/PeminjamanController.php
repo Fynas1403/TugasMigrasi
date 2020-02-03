@@ -77,8 +77,8 @@ class PeminjamanController extends Controller
 
     public function tampil_peminjaman($id)
     {
-        $peminjaman=Peminjaman_model::get();
-        $data_peminjaman=Peminjaman_model::join('anggota','anggota.id_anggota','peminjaman.id_anggota')->where('id_peminjaman',$id)->first();
+        // $peminjaman=Peminjaman_model::get();
+        $data_peminjaman=Peminjaman_model::join('anggota','anggota.id_anggota','peminjaman.id_anggota')->where('id',$id)->get();
         $arr_data=array();
         foreach ($data_peminjaman as $dt_peminjaman) {
             $ok=Detail_model::where('id',$dt_peminjaman->id)->get();
